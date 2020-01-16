@@ -2,6 +2,10 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+axios.get('https://api.github.com/users/EastonKimura')
+  .then(data => {
+    console.log('response', data)
+  })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -13,6 +17,45 @@
 /* Step 4: Pass the data received from Github into your function, 
            create a new component and add it to the DOM as a child of .cards
 */
+const cards = document.querySelector('.cards')
+function UserCards(imgUrl, UserInfo) {
+  //create the elements
+  const card = document.createElement('div')
+  const avatar = document.creatElement('img')
+  const name = document.createElement('h2')
+  const bio = document.createElement('h3')
+  const location = document.creatElement('h3')
+  const followers = document.creatElement('h3')
+  const following = document.creatElement('h3')
+  const login = document.creatElement('h4')
+  //set styles
+  cards.classList.add('cards')
+  avatar.classList.add('img')
+  name.classList.add('name')
+  login.classList.add('username')
+  location.classList.add('User-location')
+  url.classList.add('User-Github ')
+  followers.classList.add('User-followers')
+  following.classList.add('User-following')
+  bio.classList.add('User-bio')
+  //seat the content
+  img.src = imgUrl
+  name.textContent =`Name: ${UserInfo}`
+  login.textContent =`Username: ${UserInfo}`
+  location.textContent =`Location: ${UserInfo}`
+  url.textContent =`Github: ${UserInfo}`
+  follower.textContent =`Followers: ${UserInfo}`
+  following.textContent =`Following: ${UserInfo}`
+  bio.textContent =`Bio: ${UserInfo}`
+  //put them together
+  card.appendChild(img)
+  card.appendChild(img)
+  card.appendChild(img)
+  card.appendChild(img)
+  card.appendChild(img)
+  card.appendChild(img)
+  card.appendChild(img)
+}
 
 /* Step 5: Now that you have your own card getting added to the DOM, either 
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
