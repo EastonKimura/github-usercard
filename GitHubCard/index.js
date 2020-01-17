@@ -66,12 +66,23 @@ function UserCards(imgUrl, UserInfo) {
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
+axios.get('https//api.github.com/users/EastonKimura/followers')
+  .then(data => {
+    console.log('Works! Here is the list of your followers: ', data);
+    const followersData = data;
+    followersData.forEach(followerData => {
+      followersArray.push(followerData.login); 
+    })
 
-const followersArray = [];
+  })
+ const followersArray = [];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
+*/
 
+          
+/*
 <div class="card">
   <img src={image url of user} />
   <div class="card-info">
